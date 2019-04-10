@@ -2,14 +2,21 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Header from "./src/components/header";
 import PhotoFeed from "./src/components/photo-feed";
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import reducers from './src/reducers'
 
 export default class App extends React.Component {
   render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
     return (
+      <Provider store={store}>
       <View style={styles.container}>
         <Header text="Photos" />
         <PhotoFeed />
       </View>
+      </Provider>
     );
   }
 }
