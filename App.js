@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Header from "./src/components/header";
 import PhotoFeed from "./src/components/photo-feed";
 import { Provider } from 'react-redux';
